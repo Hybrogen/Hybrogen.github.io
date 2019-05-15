@@ -72,6 +72,15 @@
           </li>
           {% endif %}
 
+          {% if site.social.blbl %}
+          <!-- Bilibili -->
+          <li class="navigation__item_social">
+            <a href="https://space.bilibili.com/{{site.social.blbl}}" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/blbl.png);"></div>
+            </a>
+          </li>
+          {% endif %}
+
           <!-- RSS -->
           <li class="navigation__item_social">
             <a href="/feed.xml" rel="author" title="RSS" target="_blank">
