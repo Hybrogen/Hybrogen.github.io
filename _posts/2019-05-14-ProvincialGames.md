@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 第一次参加完省赛几句闲谈
-date: 2019-05-11
+date: 2019-05-14
 description: 为什么最菜的猹却真的变成了全村的希望？——ACM小学生的苦涩与挣扎
 tag: 闲谈
 ---
