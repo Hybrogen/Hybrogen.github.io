@@ -63,20 +63,31 @@
           {% endif %}
 
 
-          {% if site.social.mail %}
-          <!-- Email -->
-          <li class="navigation__item_social">
-            <a href="mailto:{{site.social.mail}}" title="Contact me">
-              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
-            </a>
-          </li>
-          {% endif %}
-
           {% if site.social.blbl %}
           <!-- Bilibili -->
           <li class="navigation__item_social">
             <a href="https://space.bilibili.com/{{site.social.blbl}}" title="Contact me">
               <div class="footer-social-icon" style="background:url(/images/blbl.png);"></div>
+            </a>
+          </li>
+          {% endif %}
+
+
+          {% if site.social.csdn %}
+          <!-- CSDN blog -->
+          <li class="navigation__item_social">
+            <a href="https://blog.csdn.net/{{site.social.csdn}}" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/csdn.png);"></div>
+            </a>
+          </li>
+          {% endif %}
+
+
+          {% if site.social.mail %}
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:{{site.social.mail}}" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
             </a>
           </li>
           {% endif %}
