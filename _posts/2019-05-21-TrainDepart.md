@@ -52,7 +52,7 @@ FINISH
 6. 每组样例最后输出一个 HINISH 。
 
 ### 代码
-注视很清晰哈
+注释很清晰哈
 ```
 #include <iostream>
 #include <stack>
