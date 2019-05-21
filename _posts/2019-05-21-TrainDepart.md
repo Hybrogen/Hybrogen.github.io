@@ -10,7 +10,7 @@ tag: 题解
 
 ### 题目
 As the new term comes, the Ignatius Train Station is very busy nowadays. A lot of student want to get back to school by train(because the trains in the Ignatius Train Station is the fastest all over the world ^v^). But here comes a problem, there is only one railway where all the trains stop. So all the trains come in from one side and get out from the other side. For this problem, if train A gets into the railway first, and then train B gets into the railway before train A leaves, train A can't leave until train B leaves. The pictures below figure out the problem. Now the problem for you is, there are at most 9 trains in the station, all the trains has an ID(numbered from 1 to n), the trains get into the railway in an order O1, your task is to determine whether the trains can get out in an order O2.
-![火车行动演示](/image/20190521/trainshow.png)
+![火车行动演示](/images/20190521/trainshow.png)
 **H_On の 贴心翻译：**新学期到辣，伊格纳丢火车站最近会很忙。许多学生想坐火车回学校（因为德国医学世界第一！【不是】伊格纳丢火车站世界第一！），然后问题出现了，如果 A 车先进站，然后 B 车在 A 车出站之前也进站了，A 车就只能等 B 车出站以后才能离开了。下面的图片大概演示了一下这个尴尬的情况。然后日常推锅给你（工具人Acmer），现在最多有 9 趟火车会进站，所有的火车都有自己的 ID（数字 1 到 n ），火车进站次序是 O1 ，你的任务（功能）是判断按照出站次序 O2 能不能将火车全部发出。
 
 ### 输入
