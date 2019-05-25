@@ -11,12 +11,13 @@ tag: 题解
 ### 题目
 As the new term comes, the Ignatius Train Station is very busy nowadays. A lot of student want to get back to school by train(because the trains in the Ignatius Train Station is the fastest all over the world ^v^). But here comes a problem, there is only one railway where all the trains stop. So all the trains come in from one side and get out from the other side. For this problem, if train A gets into the railway first, and then train B gets into the railway before train A leaves, train A can't leave until train B leaves. The pictures below figure out the problem. Now the problem for you is, there are at most 9 trains in the station, all the trains has an ID(numbered from 1 to n), the trains get into the railway in an order O1, your task is to determine whether the trains can get out in an order O2.
 ![火车行动演示](/images/20190521/trainshow.png)
-**H_On の 贴心翻译：**新学期到辣，伊格纳丢火车站最近会很忙。许多学生想坐火车回学校（因为德国医学世界第一！【不是】伊格纳丢火车站世界第一！），然后问题出现了，如果 A 车先进站，然后 B 车在 A 车出站之前也进站了，A 车就只能等 B 车出站以后才能离开了。下面的图片大概演示了一下这个尴尬的情况。然后日常推锅给你（工具人Acmer），现在最多有 9 趟火车会进站，所有的火车都有自己的 ID（数字 1 到 n ），火车进站次序是 O1 ，你的任务（功能）是判断按照出站次序 O2 能不能将火车全部发出。
+
+**H_On の 贴心翻译：**新学期到辣，伊格纳丢火车站最近会很忙。许多学生想坐火车回学校（因为德国医学世界第一！【不是】伊格纳丢火车站世界第一！），然后问题出现了，如果 A 车先进站，然后 B 车在 A 车出站之前也进站了，A 车就只能等 B 车出站以后才能离开了。下面的图片大概演示了一下这个尴尬的情况。然后日常推锅给你（工具人Acmer），现在最多有 9 趟火车会进站，所有的火车都有自己的 ID（数字 1 到 n ），火车进站顺序是 O1 ，你的任务（功能）是判断按照出站顺序 O2 能不能将火车全部发出。
 
 ### 输入
 The input contains several test cases. Each test case consists of an integer, the number of trains, and two strings, the order of the trains come in:O1, and the order of the trains leave:O2. The input is terminated by the end of file. More details in the Sample Input.
 
-**H_On の 贴心翻译：**多组输入样例，每组样例先是一个整数，表示火车数量，然后是两个字符串，表示火车进站次序：O1 ，和火车出站次序：O2 。输入以文件结束为标志（贴心tip：EOF）。更多详情请看样例输入。
+**H_On の 贴心翻译：**多组输入样例，每组样例先是一个整数，表示火车数量，然后是两个字符串，表示火车进站顺序：O1 ，和火车出站顺序：O2 。输入以文件结束为标志（贴心tip：EOF）。更多详情请看样例输入。
 
 ### 输出
 The output contains a string "No." if you can't exchange O2 to O1, or you should output a line contains "Yes.", and then output your way in exchanging the order(you should output "in" for a train getting into the railway, and "out" for a train getting out of the railway). Print a line contains "FINISH" after each test case. More details in the Sample Output.
@@ -44,12 +45,12 @@ FINISH
 ```
 
 ### 解题思路
-1. 使用 stack 栈来储存对内车次；
-2. 用两个栈来存放进站车次和出站车次的顺序；
-3. 将火车依次进站，直到站顶车次和第一个出站车次相同，将出站车次栈和站内车次栈栈顶出栈；
+1. 使用 stack 栈来储存站内车次；
+2. 用两个字符串来存放进站车次和出站车次的顺序；
+3. 将火车依次进站，直到站顶车次和第需要出站的车次相同，将出站车次的判断标志位往后移一位、将站内车次栈的栈顶元素出栈；
 4. 继续判断下一个出站车次，执行第 3 步；
-5. 若进站栈已空且出站栈也空说明能够依次出栈输出 Yes. 和出站顺序；若出站栈未空说明不能依次出站输出 No ；
-6. 每组样例最后输出一个 HINISH 。
+5. 若进站车次已全部进站且出站栈也空了说明能够依照出站顺序输出 Yes. 和出站顺序；若出站栈未空说明不能依照出站顺序输出 No ；
+6. 每组样例最后输出一个 FINISH 。
 
 ### 代码
 注释很清晰哈
