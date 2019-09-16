@@ -7,7 +7,7 @@ tag: 算法
 ---
 
 # 线段树学习总结 Part 1
-### &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——关于猹 ACM 生涯的第一次受苦受难
+#### &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——关于猹 ACM 生涯的第一次受苦受难
 
 <sub>本文是关于线段树的 **建树方法** 和 **建树原理** 的讲解，如果你已经对于线段树的数据结构非常了解，请直接进入下一篇文章 [线段树的基础操作]()
 
