@@ -39,6 +39,7 @@ tag: 闲谈
 >- -x - 提取包内文件
 >- -U - 首先删除已存在文件，然后解压
 >- -z - ungzip 通过 gzip 过滤存档，简单来说就是压缩/解压缩选项
+
 几个栗子：
 - tar -cf t.tar a.txt b.txt - 把文件 a.txt 和 b.txt 打包成 t.tar
 - tar -tvf t.tar - 详细信息的形式列出 t.tar 中的所有文件
