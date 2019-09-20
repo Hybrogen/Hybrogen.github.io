@@ -31,13 +31,22 @@ tag: 闲谈
 - cp [路径]<文件/文件夹> [路径][文件/文件夹] - 复制文件到制定路径/文件，不指定新文件名时不能为当前路径，有新文件名时可以不指定路径，默认在当前文件夹创建新文件
 
 压缩打包
--tar <-操作>f <压缩包名> [文件]
+- tar <-操作>f <压缩包名> [文件]
 >- -f - 放在多个操作选项的最后，指定操作的 tar 文件
 >- -c - 创建一个包
 >- -r - 追加文件到包内 `tar -f [压缩包名] -r [文件名]`
->-
->-
->-
+>- -t - 列出包内的文件
+>- -x - 提取包内文件
+>- -U - 首先删除已存在文件，然后解压
+>- -z - ungzip 通过 gzip 过滤存档，简单来说就是压缩/解压缩选项
+> 几个栗子：
+> tar -cf t.tar a.txt b.txt - 把文件 a.txt 和 b.txt 打包成 t.tar
+> tar -tvf t.tar - 详细信息的形式列出 t.tar 中的所有文件
+> tar -xf t.tar - 从 t.tar 中提取所有文件
+> tar -zcvf y.tar.gz <文件> - 将指定文件压缩打包成 y.tar ，同时显示操作的文件
+> tar -zxvf y.tar.gz - 解压提取包内文件同时显示解压出来的文件
+
+压缩来说 tar 就是好程序了，7z 也不错，zip 也还行，其他的不考虑。由于 tar 是 Linux 自带的压缩程序，其他的都需要安装，操作 Linux 的话就用 tar 叭。
 
 赋权分组
 - chmod <文件所有者权限><群组访问权限><其他人访问权限> <文件名> - 更改文件的权限
@@ -89,6 +98,14 @@ tag: 闲谈
 
 需要注意的是，有一部分选项是不带 "-" 前缀的（添加 "-" 前缀后含义可能会有出入）<br>
 习惯上将上述选项组合在一起使用，如，`ps aux` 或 `ps -elf`
+
+远程文件传输
+- scp -r [文件/文件夹] [连接服务器的用户]@<ip 地址>:[路径] - 将本地文件上传到目标服务器
+> 例：`scp -r /root/hon.txt root@192.168.1.100:/root/` 将本地的文件 "hon.txt" 上传到目标服务器的 "/root" 文件夹中<br>
+> 注意连接时要输入目标服务器的 root 用户的密码
+- scp -r [连接服务器的用户]@<ip 地址>:[路径] [路径] - 将目标服务器的文件/文件夹下载到本地文件夹中
+> 例：`scp -r root@192.168.1.100:/root/newhon.txt /root/` 将远程服务器的文件 "newhon.txt" 下载到本地 "/root" 文件夹中<br>
+> 注意连接时要输入目标服务器的 root 用户的密码
 
 编辑器
 - nano - Linux 自带的编辑器，操作简便难受
@@ -142,7 +159,9 @@ tag: 闲谈
 
 vim 的命令我这里只放出来了几个我个人写程序的时候经常用的，vim 的功能当然不限于此，更多的功能可以期待猹后期的补充哟~关于猹的更多~~小秘密~~点击页面**最**下面的链接看看叭~
 
-参考文章：
+参考文章：<br>
 [Linux命令:修改文件权限命令chmod、chgrp、chown详解](https://www.cnblogs.com/cwwmmv/p/10535175.html)<br>
 [Linux上新建用户及赋权操作](https://www.cnblogs.com/RENQIWEI1995/p/7797280.html)<br>
-[Linux如何查看和控制进程](https://baijiahao.baidu.com/s?id=1617448120776344096&wfr=spider&for=pc)
+[Linux如何查看和控制进程](https://baijiahao.baidu.com/s?id=1617448120776344096&wfr=spider&for=pc)<br>
+[Linux tar解压缩命令详解](https://blog.csdn.net/boonya/article/details/83012263)<br>
+[linux 远程复制文件或文件夹](https://www.cnblogs.com/antis/p/10345768.html)
