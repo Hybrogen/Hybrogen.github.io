@@ -40,11 +40,11 @@ tag: 闲谈
 >- -U - 首先删除已存在文件，然后解压
 >- -z - ungzip 通过 gzip 过滤存档，简单来说就是压缩/解压缩选项
 > 几个栗子：
-> tar -cf t.tar a.txt b.txt - 把文件 a.txt 和 b.txt 打包成 t.tar
-> tar -tvf t.tar - 详细信息的形式列出 t.tar 中的所有文件
-> tar -xf t.tar - 从 t.tar 中提取所有文件
-> tar -zcvf y.tar.gz <文件> - 将指定文件压缩打包成 y.tar ，同时显示操作的文件
-> tar -zxvf y.tar.gz - 解压提取包内文件同时显示解压出来的文件
+>- tar -cf t.tar a.txt b.txt - 把文件 a.txt 和 b.txt 打包成 t.tar
+>- tar -tvf t.tar - 详细信息的形式列出 t.tar 中的所有文件
+>- tar -xf t.tar - 从 t.tar 中提取所有文件
+>- tar -zcvf y.tar.gz <文件> - 将指定文件压缩打包成 y.tar ，同时显示操作的文件
+>- tar -zxvf y.tar.gz - 解压提取包内文件同时显示解压出来的文件
 
 压缩来说 tar 就是好程序了，7z 也不错，zip 也还行，其他的不考虑。由于 tar 是 Linux 自带的压缩程序，其他的都需要安装，操作 Linux 的话就用 tar 叭。
 
