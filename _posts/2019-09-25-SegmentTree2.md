@@ -1,13 +1,10 @@
 ---
 layout: post
-title: 线段树学习总结 Part 2 - 线段树的一些基础造作
+title: 线段树学习总结 Part 2 - 线段树的一些基础操作
 date: 2019-09-25
 description: 线段树
 tag: 算法
 ---
-
-# 线段树学习总结 Part 2
-#### &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——浅谈线段树
 
 <sub>本文是关于线段树的 **基础知识** 的讲解，建树，求和，加减异或等操作，如果你已经对于线段树的数据结构非常了解，请直接进入下一篇文章 [线段树的基础操作]()
 
