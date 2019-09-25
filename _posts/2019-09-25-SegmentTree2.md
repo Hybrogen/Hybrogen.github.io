@@ -6,7 +6,7 @@ description: 线段树
 tag: 算法
 ---
 
-<sub>本文是关于线段树的 **基础知识** 的讲解，建树，求和，加减异或等操作，如果你已经对于线段树的数据结构非常了解，请直接进入下一篇文章 [线段树的基础操作]()
+<sub>本文是关于线段树的 **基础知识** 的讲解，建树，求和，加减异或等操作，如果你已经对于线段树的基础操作非常了解，请直接进入下一篇文章 [权值线段树]()
 
 ### 有感而发
 我在思考线段树如何进阶的时候看到了几句话，于是有感而发：<br>
@@ -98,7 +98,13 @@ int query(int L, int R, DEFI) {
 
 这么说可能比较抽象，先走代码
 ```
-void push_down(long t, long s) {
+//一个节点对应一个标记，所以大小和树是一样的
+int V[SMAX << 2];
+
+//顺便一提有的人也会把树叫 tree[] ，懒标记叫 lazy[]
+//数组叫什么是个人习惯哈，我喜欢用一个字母所以就这样了
+
+void push_down(int t, int s) {
         if (V[t]) {
                 V[t << 1] += V[t];
                 V[t << 1|1] += V[t];
@@ -109,24 +115,24 @@ void push_down(long t, long s) {
         return ;
 }
 
-void update(long L, long R, long n, DEFI) {
+void update(int L, int R, int n, DEFI) {
         if (L <= l && R >= r) {
                 T[t] += n*(r - l + 1);
                 V[t] += n;
                 return ;
         }
-        long m = (l + r) >> 1;
         push_down(t, r - l + 1);
+        int m = (l + r) >> 1;
         if (L <= m) update(L, R, n, LSON);
         if (R > m) update(L, R, n, RSON);
         push_up(t);
         return ;
 }
 
-long query(long L, long R, DEFI) {
+int query(int L, int R, DEFI) {
         if (L <= l && R >= r) return T[t];
         push_down(t, r - l + 1);
-        long m = (l + r) >> 1, res = 0;
+        int m = (l + r) >> 1, res = 0;
         if (L <= m) res += query(L, R, LSON);
         if (R > m) res += query(L, R, RSON);
         return res;
@@ -137,6 +143,10 @@ long query(long L, long R, DEFI) {
 2. 如果这个区间的左子区间和目标区间有交集，那么向左子区间更新
 3. 果这个区间的右子区间和目标区间有交集，那么向右子区间更新
 4. 同样的由于右子区间是 [m + 1, r] ，因此判断条件是 `R > m`
+
+注意：
+1. 在更新时，如果要向子区间更新，递归之前应先将懒标记传递下去
+2. 在查询时，查询子节点之前应先判断一下当前节点是否有没有更新的懒标记存在
 
 ### 线段树基础题目合集
 [敌兵布阵 HDU-1166](http://acm.hdu.edu.cn/showproblem.php?pid=1166)<br>
