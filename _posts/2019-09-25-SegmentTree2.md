@@ -151,6 +151,6 @@ int query(int L, int R, DEFI) {
 ### 线段树基础题目合集
 [敌兵布阵 HDU-1166](http://acm.hdu.edu.cn/showproblem.php?pid=1166)<br>
 [I Hate It HDU-1754](http://acm.hdu.edu.cn/showproblem.php?pid=1754)<br>
-[]()<br>
+[Just a Hook HDU-1698](http://acm.hdu.edu.cn/showproblem.php?pid=1698)<br>
 []()<br>
 []()<br>
