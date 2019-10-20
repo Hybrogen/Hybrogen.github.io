@@ -57,7 +57,7 @@ The sums may exceed the range of 32-bit integers.
 
 ### 解题思路
 线段树的基础操作：
-1. 建树（求和数）
+1. 建树（求和树）
 2. 区间更新（懒标记）
 3. 区间查询（懒标记）
 4. 就是非常普通的线段树，请熟悉二叉树的建树原理和子节点的访问原理 [参考资料](https://hybrogen.github.io/2019/09/SegmentTree/) [参考资料](https://hybrogen.github.io/2019/09/SegmentTree2/)
