@@ -148,6 +148,9 @@ int query(int L, int R, DEFI) {
 1. 在更新时，如果要向子区间更新，递归之前应先将懒标记传递下去
 2. 在查询时，查询子节点之前应先判断一下当前节点是否有没有更新的懒标记存在
 
+> **更新** 子节点 之后 需要 向上更新父节点（调用 push_up）
+> **访问** 子节点 之前 需要 向下传递懒标记（调用 push_down）
+
 ### 线段树基础题目合集
 [敌兵布阵 HDU-1166](http://acm.hdu.edu.cn/showproblem.php?pid=1166)<br>
 [I Hate It HDU-1754](http://acm.hdu.edu.cn/showproblem.php?pid=1754)<br>

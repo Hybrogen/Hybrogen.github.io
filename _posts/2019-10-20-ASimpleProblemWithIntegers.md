@@ -61,6 +61,8 @@ The sums may exceed the range of 32-bit integers.
 2. 区间更新（懒标记）
 3. 区间查询（懒标记）
 4. 就是非常普通的线段树，请熟悉二叉树的建树原理和子节点的访问原理 [参考资料](https://hybrogen.github.io/2019/09/SegmentTree/) [参考资料](https://hybrogen.github.io/2019/09/SegmentTree2/)
+5. 注意变量名不要因为相似而写错
+6. 更新子节点之后需要 push_up 访问子节点之前需要 push_down
 
 ### 代码
 数组写法
