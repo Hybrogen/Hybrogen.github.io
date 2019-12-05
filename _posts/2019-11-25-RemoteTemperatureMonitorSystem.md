@@ -24,13 +24,14 @@ ps: 此篇文章只涉及硬件部分的温度获取和上传数据，web 方面
 
 ps:
 1. 以上设备只是我用的是这些，对硬件原理比较懂的也可以自行更换，树莓派的话什么版本的应该不影响，这里我只是把我的型号说一下以供参考
-2. 怎么烧树莓派系统和开启 SSH 功能自行百度~~问的人多的活我也有可能更新叭~~
+2. 怎么烧树莓派系统和开启 SSH 功能请看猹的另一篇文章 [莓派的系统 TF 卡制作，添加 SSH 功能以及 root 用户 ssh 登陆](https://hybrogen.github.io/2019/12/RaspberrypiSystemInstall/)
 3. DHT11 用热敏电阻，精度低，十元以内；DHT22 用热敏电容，精度高，将近三十。原教程用的是 DHT22 然而我第一次做也不敢乱换，就两个都买了，发现效果是一样的，所以自己做着尝试的话推荐先买个便宜的玩玩吧，自己摸索也不需要精度太高
 4. 教程上说电阻的阻值是 4.7 或者 10 都行，但是我也不太懂，觉得既然是并联那么就有分流功能，并联电阻越小可能芯片上电流越小然后越安全吧，所以就选用了 4.7KΩ 的哈哈
 
 ### 软件准备
 ps: <br>
-下面的操作命令我都加上了 sudo ，即临时获得管理员权限，如果你已经是 root 用户登录那就可以不加 sudo 。如果你就是不想加 sudo 可以使用以下命令来切换到 root 用户然后进行操作。
+* 下面的操作命令我都加上了 sudo ，即临时获得管理员权限，如果你已经是 root 用户登录那就可以不加 sudo 。如果你就是不想加 sudo 可以使用以下命令来切换到 root 用户然后进行操作；
+* 安装命令执行失败的话检查一下网络情况，如果失败了的话就再试几次。
 ```
 ~$ su
 ```
@@ -78,6 +79,14 @@ ps: <br>
 * python-dev 是用来支持本地安装 python 第三方库的
 
 ##### 4. 安装 Adafruit 提供的 DHT 模块的 Python 驱动
+检查 git 版本：
+```
+~$ git --version
+```
+没有 git 的话用下面的命令安装：
+```
+~$ sudo apt install git
+```
 使用 git 命令来获取模块：
 ```
 ~$ git clone https://github.com/adafruit/Adafruit_Python_DHT.git
@@ -94,19 +103,15 @@ ps: <br>
 ```
 ~/Adafruit_Python_DHT$ sudo python3 setup.py install
 ```
-没有 git 的话用下面的命令安装：
-```
-~$ sudo apt install git
-```
 
-##### 5. 安装上传数据库所需要的 Python 第三方库 pycharm
+##### 5. 安装上传数据库所需要的 Python 第三方库 pymysql
 python 安装
 ```
-~$ sudo pip install pycharm
+~$ sudo pip install PyMySQL
 ```
 python3 安装
 ```
-~$ sudo pip3 install pycharm
+~$ sudo pip3 install PyMySQL
 ```
 
 所有命令展示：（这里就直接按猹的情况来展示了）<div id="orders1"></div>
@@ -121,7 +126,7 @@ python3 安装
 ~/Adafruit_Python_DHT$ sudo python3 setup.py install
 ~/Adafruit_Python_DHT$ cd ~
 ~$ sudo apt install python3-pip
-~$ sudo pip3 install pycharm
+~$ sudo pip3 install PyMySQL
 ```
 
 ### 硬件连接
