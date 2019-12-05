@@ -253,7 +253,7 @@ def main():
             time.sleep(60)
             continue
         # 将数据上传到数据库
-        upload_data_to_mysql(con, data)
+        update_data_to_mysql(con, data)
         time.sleep(60)
 ```
 
@@ -281,7 +281,7 @@ def get_temperature_data(tre, pin):
     return ()
 ```
 
-##### 将数据上传数据库的函数 upload_data_to_mysql(con, data) ：
+##### 将数据上传数据库的函数 update_data_to_mysql(con, data) ：
 由于我们的数据库有三个字段：
 * 温度
 * 标志【因为有多个测温度的地点
@@ -289,7 +289,7 @@ def get_temperature_data(tre, pin):
 
 都是字符串类型
 ```
-def upload_data_to_mysql(con, data):
+def update_data_to_mysql(con, data):
     # 建立游标
     cur = con.cursor()
     # 执行 SQL 语句
@@ -328,7 +328,7 @@ def get_temperature_data(tre, pin):
             time.sleep(3)
     return ()
 
-def upload_data_to_mysql(con, data):
+def update_data_to_mysql(con, data):
     cur = con.cursor()
     sql  = "INSERT INTO wendu VALUES(%s,%s,%s)"
     cur.execute(sql, (data[0], 1, data[1]))
@@ -342,7 +342,7 @@ def main():
         data = get_temperature_data(tre, pin)
         if not data:
             continue
-        upload_data_to_mysql(con, data)
+        update_data_to_mysql(con, data)
         time.sleep(60)
 
 main()
