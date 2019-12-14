@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 树莓派的系统 TF 卡制作，添加 SSH 功能以及 root 用户 ssh 登陆
-date: 2019-12-01
+date: 2019-12-05
 description: 拿到一个新的树莓派应该怎么操作
 tag: 杂谈
 ---
