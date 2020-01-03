@@ -54,7 +54,7 @@ FINISH
 
 ### 代码
 注释很清晰哈
-```
+```c++
 #include <iostream>
 #include <stack>
 #include <string>
@@ -130,6 +130,58 @@ int main()
 }
 ```
 
+刚给学弟学妹讲完 STL 重温了这道题，又有了新收获哈哈【2020-01-03更新此代码
+```c++
+#include <iostream>
+#include <stack>
+#include <queue>
+
+using namespace std;
+
+int main() {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        int n;
+        while (cin >> n) {
+                string o1, o2;
+
+                cin >> o1 >> o2;	//输入两个序列
+                stack<char> t;		//用栈来存车站里的车次
+                queue<string> w;	//用队列来储存出入站情况
+                int s = 0;		//进站车次标志
+
+		//依次判断出栈顺序
+                for (int i = 0; i < n; i++) {
+			//如果栈中没有元素或者栈顶元素与【要出站的车次】不符
+			//就持续按照入站顺序入站，并且往 w 中添加记录
+                        while (t.empty() || t.top() != o2[i]) {
+				//如果所有车都已经全部入站
+				//出战车次却还没有匹配完成，那就 break
+                                if (s >= n) break;
+                                t.push(o1[s++]);
+                                w.push("in");
+                        }
+			//如果说队列为空或者栈顶元素还不匹配就结束了循环
+			//说明无法此入站顺序无法按照要求的出栈顺序出站，break
+                        if (t.empty() || t.top() != o2[i]) break;
+
+			//如果栈顶匹配，出栈并且往 w 中添加记录
+                        t.pop();
+                        w.push("out");
+                }
+
+		//最后循环结束了以后判断车站里是否为空
+		//为空说明全部正常出站，非空说明不能按照要求的出站顺序出站
+                if (t.empty()) {
+                        cout << "Yes." << endl;
+                        while (!w.empty()) cout << w.front() << endl, w.pop();
+                } else cout << "No." << endl;
+                cout << "FINISH" << endl;
+        }
+        return 0;
+}
+```
+
 ### 说一下
 一定要认真读题啊，这里就是想分享一下本人卡题的情况～
 1. 以为是：
@@ -143,7 +195,7 @@ int main()
 
 不过现在的这个代码就是看了别人的题解优化过的，以下附赠原思路代码，仅供参考，可以不看=w=
 
-```
+```c++
 //原先解法
 #include <iostream>
 #include <cstdio>
