@@ -44,4 +44,32 @@ aaaaaa  aa
 如此循环删除直到 a 串中找不到 b 串，输出计数。
 
 ### 代码
-补题结束后显示代码【手动
+```c++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+        string a;
+        while (cin >> a) {
+                // 如果遇到 # 停止程序
+                if (a[0] == '#') break;
+                string b; cin >> b;
+                int c = 0;
+
+                // 只要能从 a 中找到 b 就一直处理 a 串并且增加计数
+                while (a.find(b) != -1) {
+                        a.erase(a.begin(), a.begin() + (a.find(b) + b.size()));
+                        c += 1;
+                }
+
+                // a.find(b) = -1 时说明 a 中找不到 b
+                // 输出计数 c
+                cout << c << endl;
+        }
+        return 0;
+}
+```
