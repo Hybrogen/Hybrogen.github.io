@@ -1,6 +1,6 @@
 ---
 layout: post
-title: L1-006 连续因子 (20分) 题解
+title: 【一败涂地】L1-006 连续因子 (20分) 题解
 date: 2020-01-30
 author: H_On
 description: 很晃很暴力

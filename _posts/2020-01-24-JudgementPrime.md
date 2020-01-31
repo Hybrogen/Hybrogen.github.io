@@ -1,6 +1,6 @@
 ---
 layout: post
-title: L1-028 判断素数 (10分) 的坑
+title: 【一败涂地】L1-028 判断素数 (10分) 的坑
 date: 2020-01-24
 author: H_On
 description: 关于素数判断的卡时间问题
