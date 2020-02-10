@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【寒假CodeForces】C. Yet Another Walking Robot 题解【奇妙的记录方式
+title: 【Codeforces Round \#617 (Div. 3)】C. Yet Another Walking Robot 题解【奇妙的记录方式
 date: 2020-02-06
 author: H_On
 description: 英文题真难理解题意
