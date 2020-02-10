@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Codeforces Round #617 (Div. 3)】D. Fight with Monsters 题解
+title: 【Codeforces Round#617 (Div. 3)】D. Fight with Monsters 题解
 date: 2020-02-06
 author: H_On
 description: 英文题真难理解题意

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Codeforces Round #618 (Div. 2)】B. Assigning to Classes 题解
+title: 【Codeforces Round#618 (Div. 2)】B. Assigning to Classes 题解
 date: 2020-02-10
 author: H_On
 description: 英文题真难理解题意
@@ -21,13 +21,13 @@ As a principal of the school, you would like to assign each student to one of th
 What is the minimum possible absolute difference you can achieve?
 
 ### 输入
-Each test contains multiple test cases. The first line contains the number of test cases **t (1≤t≤10<sup>4</sup>)**. The description of the test cases follows.
+Each test contains multiple test cases. The first line contains the number of test cases **t (1≤t≤10^4)**. The description of the test cases follows.
 
-The first line of each test case contains a single integer **n (1≤n≤10<sup>5</sup>)** — the number of students halved.
+The first line of each test case contains a single integer **n (1≤n≤10^5)** — the number of students halved.
 
-The second line of each test case contains **2n** integers **a1,a2,…,a2n (1≤ai≤10<sup>9</sup>)** — skill levels of students.
+The second line of each test case contains **2n** integers **a1,a2,…,a2n (1≤ai≤10^9)** — skill levels of students.
 
-It is guaranteed that the sum of **n** over all test cases does not exceed **10<sup>5</sup>**.
+It is guaranteed that the sum of **n** over all test cases does not exceed **10^5**.
 
 ### 输出
 For each test case, output a single integer, the minimum possible absolute difference between skill levels of two classes of odd sizes.
