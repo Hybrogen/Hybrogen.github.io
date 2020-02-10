@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Codeforces Round \#618 (Div. 2)】B. Assigning to Classes 题解
+title: 【Codeforces Round #618 (Div. 2)】B. Assigning to Classes 题解
 date: 2020-02-10
 author: H_On
 description: 英文题真难理解题意

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Codeforces Round \#618 (Div. 2)】C. Anu Has a Function 题解
+title: 【Codeforces Round #618 (Div. 2)】C. Anu Has a Function 题解
 date: 2020-02-10
 author: H_On
 description: 英文题真难理解题意
@@ -17,9 +17,9 @@ She would like to research more about this function and has created multiple pro
 A value of an array **\[a<sub>1</sub>,a<sub>2</sub>,…,a<sub>n</sub>\]** is defined as **f(f(…f(f(a<sub>1</sub>,a<sub>2</sub>),a<sub>3</sub>),…a<sub>n−1</sub>),a<sub>n</sub>)** (see notes). You are given an array with **not necessarily distinct** elements. How should you reorder its elements so that the value of the array is maximal possible?
 
 ### 输入
-The first line contains a single integer **n (1≤n≤10<sup>5</sup>)**.
+The first line contains a single integer **n (1≤n≤10^5)**.
 
-The second line contains **n** integers **a<sub>1</sub>,a<sub>2</sub>,…,a<sub>n</sub> (0≤ai≤10<sup>9</sup>)**. Elements of the array are **not guaranteed** to be different.
+The second line contains **n** integers **a<sub>1</sub>,a<sub>2</sub>,…,a<sub>n</sub> (0≤ai≤10^9)**. Elements of the array are **not guaranteed** to be different.
 
 ### 输出
 Output **n** integers, the reordering of the array with maximum value. If there are multiple answers, print any.
