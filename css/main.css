@@ -937,6 +937,11 @@ img::-moz-selection {
   margin: 2.2em 0 2.1em 0;
   border-top: 1px solid #DDDDDD; }
 
+.hon-empty-line {
+        width: 100%;
+        margin: 1em 0;
+}
+
 *:focus {
   outline: none; }
 
