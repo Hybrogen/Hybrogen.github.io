@@ -649,9 +649,8 @@ img::-moz-selection {
 
   .btn-border-small {
     font-size: 1.0em;
-    height: 30px;
-    margin-left: 20px;
-    margin-right: 0;
+    height: 20px;
+    margin-left: 10px;
     color: #1289F8;
   }
 
@@ -926,10 +925,9 @@ img::-moz-selection {
 }
 
 .post-list-small-mate {
-  height: 30px;
+  height: 20px;
   background-size: 100% 100%;
   margin-top: 3px;
-  margin-right: 0;
   float: left;
   color: #4F4F4F;
 }
