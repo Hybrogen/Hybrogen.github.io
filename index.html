@@ -10,7 +10,7 @@ layout: default
                         <a href="{{ post.url }}" title="访问 {{ post.title }}">
                                 <h2 class="post-list__post-title post-title">{{ post.title }}</h2>
                                 <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 300 }}&hellip;</p>
-                                <div class="post-list__meta">
+                                <a href="{{ post.url }}" title="访问 {{ post.title }}" class="post-list__meta">
                                         <a href="/archive">
                                                 <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
                                                         <img src="/images/calendar.png" width="20px" />
@@ -26,10 +26,9 @@ layout: default
                                                 </div>
                                         </a>
                                         <div class="post-list-small-mate">
-                                                <a href="{{ post.url }}" class="btn-border-small">阅读全文 » </a>
+                                                <div class="btn-border-small">阅读全文 » </div>
                                         </div>
-                                        <div>?????</div>
-                                </div>
+                                </a>
                         </a>
                 </li>
                 {% endfor %}
