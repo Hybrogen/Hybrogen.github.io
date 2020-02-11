@@ -650,8 +650,7 @@ img::-moz-selection {
   .btn-border-small {
     font-size: 1.0em;
     height: 30px;
-    margin-left: 20px;
-    padding: 0 0 -90% 0;
+    margin-left: 10px;
     color: #1289F8;
   }
 
