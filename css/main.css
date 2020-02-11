@@ -929,7 +929,6 @@ img::-moz-selection {
   background-size: 100% 100%;
   margin-top: 3px;
   float: left;
-  display: block;
   color: #4F4F4F;
 }
 
