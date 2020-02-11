@@ -11,7 +11,7 @@ layout: default
                                 <h2 class="post-list__post-title post-title">{{ post.title }}</h2>
                                 <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 300 }}&hellip;</p>
                         </a>
-                        <hr class="post-list__divider" />
+                        <div class="post-list__divider"></div>
                         <div class="post-list__meta">
                                 <a href="/archive">
                                         <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
@@ -32,8 +32,8 @@ layout: default
                                                 <div class="btn-border-small">阅读全文 » </div>
                                         </div>
                                 </a>
-                                <hr class="post-list__divider" />
                         </div>
+                        <div class="post-list__divider"></div>
                 </li>
                 {% endfor %}
         </ol>
