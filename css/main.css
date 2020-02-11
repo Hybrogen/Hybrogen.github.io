@@ -651,7 +651,7 @@ img::-moz-selection {
     font-size: 1.0em;
     height: 30px;
     margin-left: 20px;
-    padding: 0 0 0 0;
+    padding: 0 0 -90% 0;
     color: #1289F8;
   }
 
