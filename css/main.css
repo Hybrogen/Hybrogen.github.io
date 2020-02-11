@@ -651,6 +651,7 @@ img::-moz-selection {
     font-size: 1.0em;
     height: 30px;
     margin-left: 20px;
+    margin-right: 0;
     color: #1289F8;
   }
 
@@ -880,7 +881,7 @@ img::-moz-selection {
 
 .tag-img-icon img{
   margin-top: 5px;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-right: 5px;
   display: block;
   float: left;
