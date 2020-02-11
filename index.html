@@ -15,19 +15,20 @@ layout: default
                                                 <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
                                                         <img src="/images/calendar.png" width="20px" />
                                                 </time>
-                                                <div class = "post-list-icon-mate">{{ post.date | date: "%F"}}</div>
+                                                <div class="post-list-icon-mate">{{ post.date | date: "%F"}}</div>
                                         </a>
                                         <a href="/tags">
-                                                <div class = "tag-img-icon">
+                                                <div class="tag-img-icon">
                                                         <img src="/images/tag-icon.svg" width="20px" />
                                                 </div>
-                                                <div class = "post-list-icon-mate">
+                                                <div class="post-list-icon-mate">
                                                         <span class="post-list__meta--tags-right">{{ post.tags }}</span>
                                                 </div>
                                         </a>
-                                        <div class = "post-list-small-mate">
+                                        <div class="post-list-small-mate">
                                                 <div class="btn-border-small"> 阅读全文 » </div>
                                         </div>
+                                        <div width=100%></div>
                                 </div>
                         </a>
                 </li>
