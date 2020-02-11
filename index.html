@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-<style type="text/css">
-        a.read-full-content {margin: 0;}
-</style>
+
 <div class="main-post-list hidden">
 
         <ol class="post-list">
@@ -12,28 +10,27 @@ layout: default
                         <a href="{{ post.url }}" title="访问 {{ post.title }}">
                                 <h2 class="post-list__post-title post-title">{{ post.title }}</h2>
                                 <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 300 }}&hellip;</p>
-                        </a>
-                        <div class="post-list__meta">
-                                <a href="/archive">
-                                        <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
-                                                <img src="/images/calendar.png" width="20px" />
-                                        </time>
-                                        <div class="post-list-icon-mate">{{ post.date | date: "%F"}}</div>
-                                </a>
-                                <a href="/tags">
-                                        <div class="tag-img-icon">
-                                                <img src="/images/tag-icon.svg" width="20px" />
-                                        </div>
-                                        <div class="post-list-icon-mate">
-                                                <span class="post-list__meta--tags-right">{{ post.tags }}</span>
-                                        </div>
-                                </a>
-                                <a href="{{ post.url }}" title="访问 {{ post.title }}" class="read-full-content">
+                                <div class="post-list__meta">
+                                        <a href="/archive">
+                                                <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
+                                                        <img src="/images/calendar.png" width="20px" />
+                                                </time>
+                                                <div class="post-list-icon-mate">{{ post.date | date: "%F"}}</div>
+                                        </a>
+                                        <a href="/tags">
+                                                <div class="tag-img-icon">
+                                                        <img src="/images/tag-icon.svg" width="20px" />
+                                                </div>
+                                                <div class="post-list-icon-mate">
+                                                        <span class="post-list__meta--tags-right">{{ post.tags }}</span>
+                                                </div>
+                                        </a>
+                                        <!--<a href="{{ post.url }}" title="访问 {{ post.title }}" class="read-full-content">-->
                                         <div class="post-list-small-mate">
                                                 <div class="btn-border-small">阅读全文 » </div>
                                         </div>
-                                </a>
-                        </div>
+                                </div>
+                        </a>
                 </li>
                 {% endfor %}
         </ol>
