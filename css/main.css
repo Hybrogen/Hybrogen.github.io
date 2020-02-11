@@ -926,7 +926,7 @@ img::-moz-selection {
 
 .post-list-small-mate {
   height: 30px;
-  width: 60%;
+  width: 60em;
   background-size: 100% 100%;
   margin-top: 3px;
   float: left;
