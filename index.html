@@ -11,6 +11,7 @@ layout: default
                                 <h2 class="post-list__post-title post-title">{{ post.title }}</h2>
                                 <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 300 }}&hellip;</p>
                         </a>
+                        <br>
                         <div class="post-list__meta">
                                 <a href="/archive">
                                         <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
@@ -32,6 +33,7 @@ layout: default
                                         </div>
                                 </a>
                         </div>
+                        <br>
                 </li>
                 {% endfor %}
         </ol>
