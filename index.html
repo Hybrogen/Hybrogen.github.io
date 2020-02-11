@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-
+<style type="text/css">
+        a.read-full-content {margin-left: 100%;}
+</style>
 <div class="main-post-list hidden">
 
         <ol class="post-list">
@@ -26,7 +28,7 @@ layout: default
                                                 <span class="post-list__meta--tags-right">{{ post.tags }}</span>
                                         </div>
                                 </a>
-                                <a href="{{ post.url }}" title="访问 {{ post.title }}">
+                                <a href="{{ post.url }}" title="访问 {{ post.title }}" class="read-full-content">
                                         <div class="post-list-small-mate">
                                                 <div class="btn-border-small">阅读全文 » </div>
                                         </div>
