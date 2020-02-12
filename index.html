@@ -10,8 +10,8 @@ layout: default
                         <a href="{{ post.url }}" title="访问 {{ post.title }}">
                                 <h2 class="post-list__post-title post-title">{{ post.title }}</h2>
                                 <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 300 }}&hellip;</p>
-                                <a class="hon-empty-line"> </a>
                         </a>
+                        <a href="{{ post.url }}" title="访问 {{ post.title }}" class="hon-empty-line"><div> </div></a>
                         <div class="post-list__meta">
                                 <a href="/archive">
                                         <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
