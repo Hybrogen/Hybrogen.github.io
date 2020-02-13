@@ -28,6 +28,6 @@ title: 关于我
 
 主要是其中使用 git 往 github 上上传项目真实把我搞疯了，好像打一条指令都会遇到一个新问题，总之最后算是成功了吧 . . .
 
-和视频中的一样，这个博客主要都是借用 [leopardpan]('https://github.com/leopardpan/leopardpan.github.io/') 大佬的模板制作的，很好看，他很高兴大家使用他的模板，并点个 star ，可以去看看鸭。
+和视频中的一样，这个博客主要都是借用 [leopardpan](https://github.com/leopardpan/leopardpan.github.io/) 大佬的模板制作的，很好看，他很高兴大家使用他的模板，并点个 star ，可以去看看鸭。
 
 也许之后我会常识其他模板或者自己制作吧，现在先这样，我很满足了【雾
