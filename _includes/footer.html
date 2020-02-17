@@ -4,8 +4,8 @@
                         <nav class="cover-navigation navigation--social">
                                 <ul class="navigation">
 
+                                        <!-- Github -->
                                         {% if site.social.github %}
-                                                <!-- Github -->
                                                 <li class="navigation__item_social">
                                                         <a href="https://github.com/{{site.social.github}}" title="@{{site.social.github}} 的 Github" target="_blank">
                                                                 <div class="footer-social-icon" style="background:url(/images/github.png);"></div>
@@ -13,35 +13,8 @@
                                                 </li>
                                         {% endif %}
 
-                                        {% if site.social.zhihu %}
-                                        <!-- Zhihu -->
-                                                <li class="navigation__item_social">
-                                                        <a href="https://www.zhihu.com/people/{{site.social.zhihu}}" title="@{{site.social.zhihu}}" target="_blank">
-                                                                <div class="footer-social-icon" style="background:url(/images/zhihu.png);"></div>
-                                                        </a>
-                                                </li>
-                                        {% endif %}
-
-                                        {% if site.social.juejin %}
-                                                <!-- Zhihu -->
-                                                <li class="navigation__item_social">
-                                                        <a href="https://juejin.im/user/{{site.social.juejin}}" title="@{{site.social.juejin}}" target="_blank">
-                                                                <div class="footer-social-icon" style="background:url(/images/juejin.png);"></div>
-                                                        </a>
-                                                </li>
-                                        {% endif %}
-
-                                        {% if site.social.jianshu %}
-                                                <!-- Zhihu -->
-                                                <li class="navigation__item_social">
-                                                        <a href="https://www.jianshu.com/u/{{site.social.jianshu}}" title="@{{site.social.jianshu}}" target="_blank">
-                                                                <div class="footer-social-icon" style="background:url(/images/jianshu.png);"></div>
-                                                        </a>
-                                                </li>
-                                        {% endif %}
-
+                                        <!-- Weibo -->
                                         {% if site.social.weibo %}
-                                                <!-- Weibo -->
                                                 <li class="navigation__item_social">
                                                         <a href="http://weibo.com/{{site.social.weibo}}" title="@{{site.social.weibo}} 的微博" target="_blank">
                                                                 <div class="footer-social-icon" style="background:url(/images/weibo.png);"></div>
@@ -49,41 +22,73 @@
                                                 </li>
                                         {% endif %}
 
-
-                                        {% if site.social.twitter %}
-                                                <!-- Twitter -->
+                                        <!-- ZhiHu -->
+                                        {% if site.social.zhihu %}
                                                 <li class="navigation__item_social">
-                                                        <a href="http://twitter.com/{{site.social.twitter}}" title="@{{site.social.twitter}}" target="_blank">
+                                                        <a href="https://www.zhihu.com/people/{{site.social.zhihu}}" title="@{{site.social.zhihu}}" target="_blank">
+                                                                <div class="footer-social-icon" style="background:url(/images/zhihu.png);"></div>
+                                                        </a>
+                                                </li>
+                                        {% endif %}
+
+                                        <!-- JueJin -->
+                                        {% if site.social.juejin %}
+                                                <li class="navigation__item_social">
+                                                        <a href="https://juejin.im/user/{{site.social.juejin}}" title="@{{site.social.juejin}}" target="_blank">
+                                                                <div class="footer-social-icon" style="background:url(/images/juejin.png);"></div>
+                                                        </a>
+                                                </li>
+                                        {% endif %}
+
+                                        <!-- JianShu -->
+                                        {% if site.social.jianshu %}
+                                                <li class="navigation__item_social">
+                                                        <a href="https://www.jianshu.com/u/{{site.social.jianshu}}" title="@{{site.social.jianshu}}" target="_blank">
+                                                                <div class="footer-social-icon" style="background:url(/images/jianshu.png);"></div>
+                                                        </a>
+                                                </li>
+                                        {% endif %}
+
+                                        <!-- Twitter -->
+                                        {% if site.social.twitter %}
+                                                <li class="navigation__item_social">
+                                                        <a href="http://twitter.com/{{site.social.twitter}}" title="@{{site.social.twitter}} 的 Twitter" target="_blank">
                                                                 <div class="footer-social-icon" style="background:url(/images/twitter.png);"></div>
                                                         </a>
                                                 </li>
                                         {% endif %}
 
-
+                                        <!-- Bilibili -->
                                         {% if site.social.blbl %}
-                                                <!-- Bilibili -->
                                                 <li class="navigation__item_social">
-                                                        <a href="https://space.bilibili.com/{{site.social.blbl}}" title="Contact me">
+                                                        <a href="https://space.bilibili.com/{{site.social.blbl}}" title="@{{site.avatarTitle}} 的 blbl 主页">
                                                                 <div class="footer-social-icon" style="background:url(/images/blbl.png);"></div>
                                                         </a>
                                                 </li>
                                         {% endif %}
 
-
+                                        <!-- CSDN blog -->
                                         {% if site.social.csdn %}
-                                                <!-- CSDN blog -->
                                                 <li class="navigation__item_social">
-                                                        <a href="https://blog.csdn.net/{{site.social.csdn}}" title="Contact me">
+                                                        <a href="https://blog.csdn.net/{{site.social.csdn}}" title="@{{site.social.csdn}} 的 CSDN">
                                                                 <div class="footer-social-icon" style="background:url(/images/csdn.png);"></div>
                                                         </a>
                                                 </li>
                                         {% endif %}
 
-
-                                        {% if site.social.mail %}
-                                                <!-- Email -->
+                                        <!-- codeforces -->
+                                        {% if site.social.codeforces %}
                                                 <li class="navigation__item_social">
-                                                        <a href="mailto:{{site.social.mail}}" title="Contact me">
+                                                        <a href="https://codeforces.com/profile/{{site.social.codeforces}}" title="@{{site.social.codeforces}} 的 CF 个人页">
+                                                                <div class="footer-social-icon" style="background:url(/images/codeforces.png);"></div>
+                                                        </a>
+                                                </li>
+                                        {% endif %}
+
+                                        <!-- Email -->
+                                        {% if site.social.mail %}
+                                                <li class="navigation__item_social">
+                                                        <a href="mailto:{{site.social.mail}}" title="Contact me @{{site.avatarTitle}}">
                                                                 <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
                                                         </a>
                                                 </li>
