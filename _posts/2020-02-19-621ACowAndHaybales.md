@@ -10,7 +10,7 @@ tag: 题解
 题目链接：[A. Cow and Haybales](https://codeforces.com/contest/1307/problem/A)
 
 ### 题目
-![A 题题面](/image/20200219/A.png)
+![A 题题面](/images/20200219/A.png)
 
 ### 题意
 有 n 个按顺序放好的草堆，k 次搬运机会，每次只能从一个草堆搬运一个单位的草到相邻的另一个草堆，问你搬运完之后第一堆草堆的草最多会是多少。
