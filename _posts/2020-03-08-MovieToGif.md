@@ -2,6 +2,7 @@
 layout: post
 title: python 玩玩乐 - moviepy 截取视频变成 gif 图
 date: 2020-03-08
+author: H_On
 description: python 的一些有趣的操作，还有解决 RuntimeError: No ffmpeg exe could be found. 的问题
 tag: 杂谈
 ---
