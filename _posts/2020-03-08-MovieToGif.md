@@ -1,13 +1,15 @@
 ---
 layout: post
-title: python 玩玩乐 - 视频变成 gif 图
+title: python 玩玩乐 - moviepy 剪辑视频变成 gif 图
 date: 2020-03-08
 author: H_On
-description: python 的一些有趣的操作，还有解决 RuntimeError: No ffmpeg exe could be found. 的问题
+description: python 的一些有趣的操作
 tag: 杂谈
 ---
 
 此篇来源于被迫营业，但是我很开心
+
+# 本篇附赠解决 RuntimeError: No ffmpeg exe could be found. 报错的方法【可能有效
 
 ### 目录
 * [前置需要 提示：安装 moviepy 的坑](#前置需要-提示：安装-moviepy-的坑)
