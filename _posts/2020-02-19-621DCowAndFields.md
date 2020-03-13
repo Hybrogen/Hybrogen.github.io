@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Codeforces Round#621 (Div. 1 + Div. 2)】D. Cow and Fields 题解
+title: 【Codeforces Round#621 (Div. 1 + Div. 2)】D. Cow and Fields 题解 - 最短路
 date: 2020-02-19
 author: H_On
 description: 英文题真难理解题意

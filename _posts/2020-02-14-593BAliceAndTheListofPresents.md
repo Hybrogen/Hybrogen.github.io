@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Codeforces Round#593 (Div. 2)】B. Alice and the List of Presents 题解
+title: 【Codeforces Round#593 (Div. 2)】B. Alice and the List of Presents 题解 - 快速幂
 date: 2020-02-14
 author: H_On
 description: 英文题真难理解题意
