@@ -146,6 +146,18 @@ linux_logo -L 30 > /etc/motd
 ```
 ![system-logo](/images/20200305/login2.png)
 
+**或者**也可以安装使用更有趣的软件<br>
+`figlet` 是使用键盘上的符号帮你输出一个大字，只支持英文
+```sh
+apt install figlet
+figlet 233lol
+figlet "H_On's debian"
+```
+把这个写进上面说的文件里也很有趣嘿嘿
+
+![custom-logo](/images/20200305/login3.png)
+
+
 ### 安装 python3.6
 网上找了一些教程跟着做，这里贴出亲测能用的一个
 ```sh
