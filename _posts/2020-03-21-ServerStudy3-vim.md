@@ -99,13 +99,13 @@ vf-
 map Q :q<CR>
 ```
 > tips：<br>
-> \<CR\>		回车键<br>
-> \<Esc\>		esc 键<br>
-> \<C-key\>	ctrl + 某个键 如 <C-x> 就是 ctrl + x 这个组合按键<br>
-> \<up\>		方向键的上箭头<br>
-> \<down\>	方向键的下箭头<br>
-> \<left\>	方向键的左箭头<br>
-> \<right\>	方向键的右箭头<br>
+> `<CR>`    回车键<br>
+> `<Esc>`   esc 键<br>
+> `<C-key>` ctrl + 某个键 如 `<C-x>` 就是 `ctrl + x` 这个组合按键<br>
+> `<up>`    方向键的上箭头<br>
+> `<down>`  方向键的下箭头<br>
+> `<left>`  方向键的左箭头<br>
+> `<right>` 方向键的右箭头<br>
 
 其他的就不是很常用~~我也不是很会~~，如果有常用的操作我会继续更新
 
@@ -125,4 +125,3 @@ map Q :q<CR>
 [上古神器Vim：从恶言相向到爱不释手 - 终极Vim教程01 - 带你配置属于你自己的最强IDE](https://www.bilibili.com/video/av55498503)<br>
 [上古神器Vim：进阶使用/配置、必备插件介绍 - 终极Vim教程02 - 带你配置属于你自己的最强IDE](https://www.bilibili.com/video/av55664166)<br>
 [「妈妈不会告诉你的Vim技巧」 -Vim终极教程03 - 带你配置属于你自己的最强IDE](https://www.bilibili.com/video/av56020134)<br>
-
