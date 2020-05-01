@@ -190,7 +190,6 @@ apt install mysql-server
 apt install mysql-client
 apt install libmysqlclient-dev
 ```
-root - 4r3e2w1q`
 
 ### 安装 phpmyadmin
 ```sh
