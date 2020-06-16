@@ -3,14 +3,16 @@ layout: post
 title: 树莓派的系统 TF 卡制作，添加 SSH 功能以及 root 用户 ssh 登陆
 date: 2019-12-05
 description: 拿到一个新的树莓派应该怎么操作
-tag: 杂谈
+tag: 树莓派
 ---
+
+_由于官网改版，一些图片以及一些操作在 2020/05/31 更新_
 
 ### 树莓派系统盘 - TF 卡制作准备
 #### 1. 进入树莓派系统的[官方下载页面](https://www.raspberrypi.org/downloads/)<br>
 不想看系统介绍的可以直接查看第二步~
-![树莓派官方推荐系统](/images/20191205/raspberrypi-system1.png)
-![树莓派第三方系统](/images/20191205/raspberrypi-system2.png)
+![树莓派官方推荐系统](/images/20191205/raspberrypi-system1.png)<br>
+![树莓派第三方系统](/images/20191205/raspberrypi-system2.png)<br>
 > 树莓派有很多系统（但都是专用的，只能使用官网上的系统），这里借用小手册上的一些介绍：
 > * NOOBS: 官方推荐，这是一个多系统引导管理器，可以引导多种系统的安装。【应该来说一般不会用得上
 > * Raspbian: 官方推荐，基于 Debian 系统专门位卡片式计算机树莓派定制的版本，应该来说是树莓派用户最广泛使用的系统。国内更新源多，软件丰富，系统稳定，对于新手和老手使用起来都很顺手。其他的第三方系统各有偏重，而 Raspbain 在各方面比较平衡，因此它是官方首选系统，强力推荐新手使用此系统对树莓派进行熟悉入门和操作学习等。
@@ -25,7 +27,7 @@ tag: 杂谈
  1. 点击进入 Raspbain 的下载页面<br>
  ![系统下载步骤1](/images/20191205/install-step1.png)<br>
  2. 下滑找到下载链接，第一个是图形化界面加常用软件，第二个是图形界面，第三个是仅系统核心没有图形界面的命令行版本【第三个显然是最好用的辣=w=<br>
- 可以直接点击下载 zip 压缩包，也可以先下载迅雷链接，然后再使用迅雷下载（迅雷下载会快一点）<br>
+ 可以直接点击下载 zip 压缩包，~~也可以先下载迅雷链接，然后再使用迅雷下载（迅雷下载会快一点）~~ 现在迅雷不能用了，没有迅雷还则罢了，有的话最好在迅雷设置里把“接管浏览器”给取消掉，用浏览器才能下载（猹是这个情况）<br>
  ![系统下载步骤2](/images/20191205/install-step2.png)
 
 #### 3. 下载烧录软件 [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/)
@@ -51,6 +53,8 @@ tag: 杂谈
 2. 删除所有分区
 3. 选中卡，点上面的新建分区选择文件系统类型为 **FAT32** ![新建分区](/images/20191205/newarea.png)
 4. 确定~~我不是故意④步的QAQ~~
+
+ps: 如果在第二步👇烧系统的时候出现错误建议用 DiskGenius 重新格式化一下 SD 卡。
 
 #### 2. 烧录系统
 1. 双击运行 Win32DiskImager 安装程序进行软件安装
@@ -81,13 +85,15 @@ ps: 我其实之前就添加过一次，不过今天拿出来看之前添加的 
 
 #### 连接树莓派
 以最近猹经常用的 FinalShell 为例[下载地址](http://www.hostbuf.com/downloads/finalshell_install.exe)：
-1. 新建 SSH 连接，默认可以登陆的用户名是 pi 密码是 raspberry<br>
+新建 SSH 连接，默认可以登陆的用户名是 pi 密码是 raspberry<br>
 ![新建SSH连接](/images/20191205/addshhlink.png)
 ![SSH设置](/images/20191205/sshsetting.png)
-2. 设置 root 用户的密码【可不做<br>
-root 用户有管理员权限，超级用户可以对系统内文件进行任何操作，有时做一些事情会比较方便<br>
+
+### 使用root用户连接【可不做
+因为 **root** 用户有管理员权限，超级用户可以对系统内文件进行任何操作，有时做一些事情会比较方便，默认 root 用户是没有密码的
+#### 设置 root 用户的密码
 普通用户也可以使用 `sudo` 命令来临时获得管理员权限，我们可以用 `passwd` 命令来修改 root 用户的密码，之后我们就可以直接用 root 用户来登陆树莓派辣
-```
+```sh
 pi@raspberrypi:~ $ sudo passwd root
 New password:
 Retype new password:
@@ -95,6 +101,30 @@ passwd: password updated successfully
 pi@raspberrypi:~ $
 ```
 
-到此，拿到树莓派应该做的事就结束辣
+#### 配置允许使用 root 用户 ssh 连接<br>
+> 为了操作方便我先换成 root 用户并且安装了一个 vim 【因为是新装的系统
+```sh
+pi@raspberrypi:~ $ su
+Password:
+root@raspberrypi:/home/pi# apt install vim -y
+```
+
+1. 打开配置文件
+```sh
+vim /etc/ssh/sshd_config
+```
+vim 用的不熟的同学看看 [猹的小教程](https://blog.zinchon.cn/2019/09/ServerStudy-Linux/#vim-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C)
+2. 找到 `PermitRootLogin` ，将这里改成这样【建议不熟悉的同学新添加一行不要修改原来的注释内容
+```
+PermitRootLogin yes # 允许 root 用户登录
+```
+3. 保存文件并退出后，**记 得 重 启 ！** 【猹刚刚改了半天都连不上最后发现需要重启一下=w=
+```sh
+reboot
+```
+
+之后就可以愉快的用 root 登录辣，其实还有一些 [拿到新系统的基础操作](https://blog.zinchon.cn/2020/03/ServerStudy2/#%E5%B7%B2%E7%BB%8F%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95) ，不过这就是linux的东西了
+
+到此，拿到树莓派应该做的事就结束辣~
 
 树莓派作为一个可以运行 linux 系统的小主板，可以制作自己的小型博客服务器，云数据库等；还可以接上各种传感器、显示器、驱动器之类的硬件模块，做出各种各样的东西，车啊，飞机啊，魔镜啊啥的，网上多的是；还可以制作一台路由器，个人影院啥的。反正树莓派真是个好东西=w=
