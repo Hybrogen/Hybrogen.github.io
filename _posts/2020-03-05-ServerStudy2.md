@@ -3,7 +3,7 @@ layout: post
 title: 服务器学习历程 Part 2 - 拿到一个 linux 服务器应该做什么
 date: 2020-03-05
 description: Linux 系统的一些有趣的操作
-tag: 杂谈
+tag: Linux系统
 ---
 
 目前此文章全都是在 `Ubuntu 16.04` 中的操作
@@ -68,7 +68,11 @@ sudo apt install zsh
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) -y"
 ```
-![zsh](/images/20200305/zsh1.png)
+![zsh](/images/20200305/zsh1.png)<br>
+如果你的系统里没有，需要先安装`git`和`curl`
+```sh
+apt install git curl -y
+```
 
 #### **更换样式**
 安装完成以后，首先可以发现 Oh My Zsh 修改了你的命令终端的命令行的样式<br>
