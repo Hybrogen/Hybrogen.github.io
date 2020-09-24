@@ -3,7 +3,7 @@ layout: post
 title: 服务器学习历程 Part 1 - Linux 基础
 date: 2019-09-19
 description: Linux 基础命令和 vim 基础
-tag: 杂谈
+tag: Linux系统
 ---
 
 ### Linux 常用命令
