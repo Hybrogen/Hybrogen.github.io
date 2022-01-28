@@ -8,7 +8,7 @@ tag: 题解
 ---
 
 # Error: Error: No uploaded artifact was found! Please check if there are any errors at build step.
-# Liquid Exception: Liquid syntax error (line 128): Variable '{_{0,0}' was not properly terminated with regexp: /}_}/ in .md
+# Liquid Exception: Liquid syntax error (line 128): Variable '\{\{0,0}' was not properly terminated with regexp: /\}\}/ in .md
 
 - [开头的废话](#开头的废话)
 - [解决方法](#解决方法)
@@ -38,4 +38,4 @@ tag: 题解
 ### 有用的参考文章
 * [【GitHub pages】关于404错误There isn‘t a GitHub Pages site here.
 ](https://gitee.com/oschina/git-osc/issues/I1BLTM?_from=gitee_search)
-* [部署Page时报错: Liquid syntax error: Variable '{{0, 0}' was not properly terminated with regexp: /\}\}/](https://gitee.com/oschina/git-osc/issues/I1BLTM?_from=gitee_search)
+* [部署Page时报错: Liquid syntax error: Variable '\{\{0, 0}' was not properly terminated with regexp: /\}\}/](https://gitee.com/oschina/git-osc/issues/I1BLTM?_from=gitee_search)
