@@ -8,7 +8,7 @@ tag: 题解
 ---
 
 # Error: Error: No uploaded artifact was found! Please check if there are any errors at build step.
-# Liquid Exception: Liquid syntax error (line 128): Variable '{{0,0}' was not properly terminated with regexp: /\}\}/ in .md
+# Liquid Exception: Liquid syntax error (line 128): Variable '\{\{0,0}' was not properly terminated with regexp: /\}\}/ in .md
 
 - [开头的废话](#开头的废话)
 
