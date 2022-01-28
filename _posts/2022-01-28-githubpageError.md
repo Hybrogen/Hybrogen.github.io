@@ -35,6 +35,12 @@ tag: 题解
 修改过后可以渲染的写法是这样的<br>
 ![可以渲染](/images/20220128/p2.png)
 
+### 之后的更新
+在上传这个文章的时候，我莫名其妙发现了解决方法<br>
+其实很简单就是既然它是go语言的内容，大括号前面加 `\` 转义符就好了
+
+人傻了
+
 ### 有用的参考文章
 * [【GitHub pages】关于404错误There isn‘t a GitHub Pages site here.
 ](https://gitee.com/oschina/git-osc/issues/I1BLTM?_from=gitee_search)
