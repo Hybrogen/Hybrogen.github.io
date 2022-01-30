@@ -4,7 +4,7 @@ title: github-pages Deployed by @github-pages github-pages 23 hours ago Failure
 date: 2022-01-28
 author: H_On
 description: 记录一个网络上相关文章很少的问题
-tag: 题解
+tag: 杂谈
 ---
 
 # Error: Error: No uploaded artifact was found! Please check if there are any errors at build step.
