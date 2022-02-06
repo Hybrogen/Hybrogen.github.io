@@ -8,23 +8,24 @@ tag: Linux系统
 
 目前此文章全都是在 `Ubuntu 16.04` 中的操作
 
-# 此篇集成了 公钥登录 OhMyZsh 自定义登录提示 安装python3.6 安装mysql 安装phpmyadmin 安装Scrapy 安装requests，etree
+**此篇集成了 公钥登录 OhMyZsh 自定义登录提示 安装python3.6 安装mysql 安装phpmyadmin 安装Scrapy 安装requests，etree**
 
 ### 目录
-* [已经登录远程服务器设置公钥登录](#已经登录远程服务器设置公钥登录)
-* [使用 Oh My Zsh 优化命令终端](#使用-Oh-My-Zsh-优化命令终端)
-  - [更换样式](#更换样式)
-  - [启用插件](#启用插件)
-  - [其他事项](#其他事项)
-* [添加一点自定义的登录后显示的提示](#添加一点自定义的登录后显示的提示)
-* [安装 python3.6](#安装-python3.6)
-* [安装 mysql](#安装-mysql)
-* [安装 phpmyadmin](#安装-phpmyadmin)
-* [营业](#营业)
-  - [安装 Scrapy](#安装-Scrapy)
-  - [安装网站连接库 requests](#安装网站连接库-requests)
-  - [安装 html 解析库 etree](#安装-html-解析库-etree)
-* [参考文章](#参考文章)
+- [目录](#目录)
+- [已经登录远程服务器设置公钥登录](#已经登录远程服务器设置公钥登录)
+- [使用 Oh My Zsh 优化命令终端](#使用-oh-my-zsh-优化命令终端)
+  - [**更换样式**](#更换样式)
+  - [**启用插件**](#启用插件)
+  - [**其他事项**](#其他事项)
+- [添加一点自定义的登录后显示的提示](#添加一点自定义的登录后显示的提示)
+- [安装 python3.6](#安装-python36)
+- [安装 mysql](#安装-mysql)
+- [安装 phpmyadmin](#安装-phpmyadmin)
+- [营业](#营业)
+  - [**安装 Scrapy**](#安装-scrapy)
+  - [**安装网站连接库 requests**](#安装网站连接库-requests)
+  - [**安装 html 解析库 etree**](#安装-html-解析库-etree)
+- [参考文章](#参考文章)
 
 ### 已经登录远程服务器设置公钥登录
 因为腾讯云阿里云什么的服务器都不让直接用 root 用户 ssh 登录，然而普通用户操作起来又很难受，尤其是常用 ubuntu 系统，很多 sudo 命令又奇怪的很。所以尝试用公钥私钥的方式直接用 root 用户 ssh 登录。
