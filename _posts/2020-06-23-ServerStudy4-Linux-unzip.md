@@ -3,7 +3,7 @@ layout: post
 title: 服务器学习历程 Part 3 - Linux解压二三事
 date: 2020-06-24
 description: 在为了做好自己本职工作的过程中遇到的问题
-tag: 杂谈
+tag: Linux系统
 ---
 
 - [zip](#zip)
