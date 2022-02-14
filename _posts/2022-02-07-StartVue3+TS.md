@@ -15,12 +15,14 @@ tag: 前端
 - [下载依赖](#下载依赖)
 - [配置打包命令](#配置打包命令)
 - [打包运行](#打包运行)
+- [打包多个 ts 文件](#打包多个-ts-文件)
+- [开始 vue](#开始-vue)
 - [参考资料](#参考资料)
 
 ### 安装环境
 猹这边是没有在windows下学习，直接使用Debian系统练习，但安装 `nodejs` 之后的大部分命令都一样
 
-1. 据说需要安装 nodejs `apt install nodejs`
+1. 据说需要安装 nodejs `apt install nodejs npm`
 2. 安装 TypeScript 环境 `npm install -g typescript`
 3. 安装 nginx 用于代理网页便于远程查看 `apt install nginx-light`
   <br>如果是windows的朋友直接点击html文件查看即可，不需要安装这个
@@ -234,7 +236,40 @@ npm install -D typescript webpack webpack-cli webpack-dev-server html-webpack-pl
     ```
   * 记得重启 nginx 服务 `/usr/sbin/nginx -s reload`
 
-> 此时猹猹突然发现，就算public/index.html 里没有添加script文件，src里的ts代码还是自动加入了打包之后的html代码里，针不戳
+> 此时猹猹突然发现，就算 public/index.html 的html代码里里没有添加script文件，src里的ts代码还是自动加入了打包之后的html代码里，针不戳
+
+### 打包多个 ts 文件
+如果你有多个ts文件需要运行，在 `src` 文件夹中新建一个 ts 文件 `new.ts` 之后，只需要在 `main.ts` 的最上面引入新的ts文件 `import './new'` 就可以使用了
+
+### 开始 vue
+```bash
+# 安装或升级
+npm install -g @vue/cli
+# 保证 vue-cli 版本在 4.5.0 以上
+vue --version
+# 创建项目
+vue create my_project
+```
+
+创建步骤:
+- Please pick a preset - 选择 ***Manually select features***
+- Check the features needed for your project - 选择上 ***TypeScript*** ，特别注意点空格是选择，点回车是下一步
+- Choose a version of Vue.js that you want to start the project with - 选择 ***3.x (Preview)***
+- Use class-style component syntax - 直接回车
+- Use Babel alongside TypeScript - 直接回车
+- Pick a linter / formatter config - 直接回车
+- Pick additional lint features - 直接回车
+- Where do you prefer placing config for Babel, ESLint, etc.? - 直接回车
+- Save this as a preset for future projects? - 直接回车
+
+- Use history mode for router? - 直接回车
+- Pick a linter / formatter config - 直接回车
+
+运行项目:
+```bash
+cd my_project
+npm run serve
+```
 
 ### 参考资料
 * [B站讲的最好的Vue3+TS从入门到精通](https://www.bilibili.com/video/BV1CK411u75G?p=9&spm_id_from=pageDriver)
