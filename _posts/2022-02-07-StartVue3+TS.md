@@ -248,7 +248,9 @@ npm install -g @vue/cli
 # 保证 vue-cli 版本在 4.5.0 以上
 vue --version
 # 创建项目
-vue create my_project
+npm init vite@latest honweb -- --template vue
+# 这个语句不能用，用上面那个吧
+# vue create my_project
 ```
 
 创建步骤:
