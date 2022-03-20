@@ -6,13 +6,23 @@ description: 使用树莓派获取温度并上传到云数据库
 tag: 树莓派
 ---
 
-# 基于 树莓派 3B RS、DHT11/DHT22、Python、MySQL 的远程温度监测系统
-# 使用树莓派获取温度并上传至云数据库
-# 以及完成程序开机自启
+**基于 树莓派 3B RS、DHT11/DHT22、Python、MySQL 的远程温度监测系统**
+<br>**使用树莓派获取温度并上传至云数据库**
+<br>**以及完成程序开机自启**
 
 [参考文章](https://www.cnblogs.com/junjun001/p/9335246.html)
 
 ps: 此篇文章只涉及硬件部分的温度获取和上传数据，web 方面的浏览页面的组建可以期待庞大佬的更新文章【他并不喜欢写博客所以不一定会有【吐舌头
+
+- [硬件准备](#硬件准备)
+- [软件准备](#软件准备)
+  - [命令解释](#命令解释)
+  - [所有命令展示：（这里就直接按猹的情况来展示了）](#所有命令展示这里就直接按猹的情况来展示了)
+- [硬件连接](#硬件连接)
+- [测试程序代码](#测试程序代码)
+- [正式程序代码](#正式程序代码)
+- [完整代码](#完整代码)
+- [开机自动运行程序](#开机自动运行程序)
 
 ### 硬件准备
 1. 一个自己管理的路由器（为了能够查看树莓派的 ip 方便之后 SSH），连接路由器的充电器和网线
@@ -31,92 +41,89 @@ ps:
 ### 软件准备
 ps:
 * 下面的操作命令我都加上了 sudo ，即临时获得管理员权限，如果你已经是 root 用户登录那就可以不加 sudo 。如果你就是不想加 sudo 可以使用以下命令来切换到 root 用户然后进行操作；
+    ```bash
+    ~$ su
+    ```    
+    还有操作过程中可能会需要进入其他文件夹 `cd ..` 可以回到 **上一级** 目录 `cd ~` 可以回到 **家目录**
+    ```bash
+    ~/a/b/c$ cd ..
+    ~/a/b$
+    ~/a/b$ cd ~
+    ~$
+    ```
 * 安装命令执行失败的话检查一下网络情况，如果失败了的话就再试几次。
-```
-~$ su
-```
-还有操作过程中可能会需要进入其他文件夹 `cd ..` 可以回到 **上一级** 目录 `cd ~` 可以回到 **家目录**
-```
-~/a/b/c$ cd ..
-~/a/b$
-~/a/b$ cd ~
-~$
-```
-[**若想跳过繁琐的介绍可以直接去展示所有命令的地方**](#orders1)
 
-##### 1. 有事没事先吧自己的软件都更新一遍
-```
-~$ sudo apt update
-~$ sudo apt upgrade
-```
+#### 命令解释
+[**若想跳过繁琐的介绍可以直接去展示所有命令的地方**](#所有命令展示这里就直接按猹的情况来展示了)
+1. 有事没事先吧自己的软件都更新一遍
+    ```bash
+    ~$ sudo apt update
+    ~$ sudo apt upgrade
+    ```
+2. 检查 python 环境，python 和 python3 都可以，选择其中一个即可，即下面的所有关于 Python 的命令统一使用一套的就可以了【俺喜欢用 python3
+    <br>检查 python 和 pip 版本：
+    ```bash
+    ~$ python --version
+    ~$ pip --version
+    ```
+    如果是 python3 则使用：
+    ```bash
+    ~$ python3 --version
+    ~$ pip3 --version
+    ```
+    没有的话就用以下命令安装：
+    ```bash
+    ~$ sudo apt install python
+    ~$ sudo apt install python-pip
+    ```
+    如果是 python3 则使用：
+    ```bash
+    ~$ sudo apt install python3
+    ~$ sudo apt install python3-pip
+    ```
+3. 安装前置软件包
+    ```bash
+    ~$ sudo apt install build-essential python-dev
+    ```
+    * build-essential 是帮助编译程序的
+    * python-dev 是用来支持本地安装 python 第三方库的
+4. 安装 Adafruit 提供的 DHT 模块的 Python 驱动
+    检查 git 版本：
+    ```bash
+    ~$ git --version
+    ```
+    没有 git 的话用下面的命令安装：
+    ```bash
+    ~$ sudo apt install git
+    ```
+    使用 git 命令来获取模块：
+    ```bash
+    ~$ git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+    ```
+    进入文件夹进行模块安装：
+    ```bash
+    ~$ cd Adafruit_Python_DHT
+    ```
+    安装到 python2 运行库：
+    ```bash
+    ~/Adafruit_Python_DHT$ sudo python setup.py install
+    ```
+    如果是 python3 则使用：
+    ```bash
+    ~/Adafruit_Python_DHT$ sudo python3 setup.py install
+    ```
+5. 安装上传数据库所需要的 Python 第三方库 pymysql
+    <br>python 安装
+    ```
+    ~$ sudo pip install PyMySQL
+    ```
+    python3 安装
+    ```
+    ~$ sudo pip3 install PyMySQL
+    ```
 
-##### 2.检查 python 环境，python 和 python3 都可以，选择其中一个即可，即下面的所有关于 Python 的命令统一使用一套的就可以了【俺喜欢用 python3
-检查 python 和 pip 版本：
-```
-~$ python --version
-~$ pip --version
-```
-如果是 python3 则使用：
-```
-~$ python3 --version
-~$ pip3 --version
-```
-没有的话就用以下命令安装：
-```
-~$ sudo apt install python
-~$ sudo apt install python-pip
-```
-如果是 python3 则使用：
-```
-~$ sudo apt install python3
-~$ sudo apt install python3-pip
-```
-
-##### 3. 安装前置软件包
-```
-~$ sudo apt install build-essential python-dev
-```
-* build-essential 是帮助编译程序的
-* python-dev 是用来支持本地安装 python 第三方库的
-
-##### 4. 安装 Adafruit 提供的 DHT 模块的 Python 驱动
-检查 git 版本：
-```
-~$ git --version
-```
-没有 git 的话用下面的命令安装：
-```
-~$ sudo apt install git
-```
-使用 git 命令来获取模块：
-```
-~$ git clone https://github.com/adafruit/Adafruit_Python_DHT.git
-```
-进入文件夹进行模块安装：
-```
-~$ cd Adafruit_Python_DHT
-```
-安装到 python2 运行库：
-```
-~/Adafruit_Python_DHT$ sudo python setup.py install
-```
-如果是 python3 则使用：
-```
-~/Adafruit_Python_DHT$ sudo python3 setup.py install
-```
-
-##### 5. 安装上传数据库所需要的 Python 第三方库 pymysql
-python 安装
-```
-~$ sudo pip install PyMySQL
-```
-python3 安装
-```
-~$ sudo pip3 install PyMySQL
-```
-
-所有命令展示：（这里就直接按猹的情况来展示了）<div id="orders1"></div>
-```
+#### 所有命令展示：（这里就直接按猹的情况来展示了）
+```bash
 ~$ sudo apt update
 ~$ sudo apt upgrade
 ~$ python3 --version
@@ -207,111 +214,105 @@ vim 操作不太熟练的同学可以去康康猹的 [Linux基础操作文章](h
 下一步我们就要讲数据好好的整理一下然后上传到数据库了
 
 ### 正式程序代码
-##### 习惯性设置编码：
-```
-#-*- coding:utf-8 -*-
-```
+1. 习惯性设置编码：
+    ```py
+    #-*- coding:utf-8 -*-
+    ```
+2. 首先头文件里需要：
+   * 传感器连接库
+   * 数据库连接库
+   * time 库用于延时和获取时间
+    ```py
+    import Adafruit_DHT
+    import pymysql
+    import time
+    ```
+3. 主函数里准备好不需要经常变化的变量：
+   * 传感器对象
+   * 接受信号的引脚编号
+   * 与数据库的连接
+   
+   然后获取数据并上传数据库
+   ```py
+   def main():
+       # 生成 dht11 温湿度传感器收取对象
+       tre = Adafruit_DHT.DHT11
+       # 设置信号收取引脚 - GPIO 4
+       pin = 4
+       # 建立连接
+       con = pymysql.connect(
+               host = '[数据库 ip 地址]',
+               port = [数据库端口 通常是3306],
+               user = '[用户名 一般用 root 登陆]',
+               passwd = '[对应用户密码]',
+               db = '[数据库的名字]',
+               charset = '[数据库编码 通常是 utf8 ]'
+               )
+       while True:
+           # 获取温度信息
+           data = get_temperature_data(tre, pin)
+           # 获取失败了的话输出提醒
+           if not data:
+               print('get data failed...')
+               time.sleep(60)
+               continue
+           # 将数据上传到数据库
+           update_data_to_mysql(con, data)
+           time.sleep(60)
+   ```
+4. 获取温度信息的函数 get_temperature_data(tre, pin) ：
+    需要获取传感器收集的数据，还要获取收集到数据的时间
+    ```py
+    def get_temperature_data(tre, pin):
+        # 尝试获取三次
+        for i in range(3):
+            # 使用 read_retry(sensor, pin) 获取传感器收集到的数据
+            hum, tem = Adafruit_DHT.read_retry(tre, pin)
+            if hum is not None and tem is not None and tem > -271 and tem < 100:
+                # 如果传感器获取数据成功，生成一个获取到的时间，格式化成 “年-月-日 时:分:秒”
+                tim = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+                # print('温度获取成功')
+                # print('Temp = ' + str(tem) + '\nHumidity = ' + str(hum) + '\ntime is ' + tim + '\n--------------')
+                # 返回一个元组类型的数据，包含 温度 和 时间 ，都是字符串类型
+                return (str(tem), tim)
+            # 前两次尝试获取失败延时 3 秒重新获取
+            if i < 2:
+                # print('温度获取wrong，正在尝试重新获取 . . .')
+                time.sleep(3)
+        # 三次获取失败直接返回一个空数据
+        # print('温度获取失败，请检查硬件是否异常')
+        return ()
+    ```
+5. 将数据上传数据库的函数 update_data_to_mysql(con, data) ：
+    由于我们的数据库有三个字段：
+    * 温度
+    * 标志【因为有多个测温度的地点
+    * 时间
 
-##### 首先头文件里需要：
-* 传感器连接库
-* 数据库连接库
-* time 库用于延时和获取时间
-
-```
-import Adafruit_DHT
-import pymysql
-import time
-```
-
-##### 主函数里准备好不需要经常变化的变量：
-* 传感器对象
-* 接受信号的引脚编号
-* 与数据库的连接
-
-然后获取数据并上传数据库
-```
-def main():
-    # 生成 dht11 温湿度传感器收取对象
-    tre = Adafruit_DHT.DHT11
-    # 设置信号收取引脚 - GPIO 4
-    pin = 4
-    # 建立连接
-    con = pymysql.connect(
-            host = '[数据库 ip 地址]',
-            port = [数据库端口 通常是3306],
-            user = '[用户名 一般用 root 登陆]',
-            passwd = '[对应用户密码]',
-            db = '[数据库的名字]',
-            charset = '[数据库编码 通常是 utf8 ]'
-            )
-    while True:
-        # 获取温度信息
-        data = get_temperature_data(tre, pin)
-        # 获取失败了的话输出提醒
-        if not data:
-            print('get data failed...')
-            time.sleep(60)
-            continue
-        # 将数据上传到数据库
-        update_data_to_mysql(con, data)
-        time.sleep(60)
-```
-
-##### 获取温度信息的函数 get_temperature_data(tre, pin) ：
-需要获取传感器收集的数据，还要获取收集到数据的时间
-```
-def get_temperature_data(tre, pin):
-    # 尝试获取三次
-    for i in range(3):
-        # 使用 read_retry(sensor, pin) 获取传感器收集到的数据
-        hum, tem = Adafruit_DHT.read_retry(tre, pin)
-        if hum is not None and tem is not None and tem > -271 and tem < 100:
-            # 如果传感器获取数据成功，生成一个获取到的时间，格式化成 “年-月-日 时:分:秒”
-            tim = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-            # print('温度获取成功')
-            # print('Temp = ' + str(tem) + '\nHumidity = ' + str(hum) + '\ntime is ' + tim + '\n--------------')
-            # 返回一个元组类型的数据，包含 温度 和 时间 ，都是字符串类型
-            return (str(tem), tim)
-        # 前两次尝试获取失败延时 3 秒重新获取
-        if i < 2:
-            # print('温度获取wrong，正在尝试重新获取 . . .')
-            time.sleep(3)
-    # 三次获取失败直接返回一个空数据
-    # print('温度获取失败，请检查硬件是否异常')
-    return ()
-```
-
-##### 将数据上传数据库的函数 update_data_to_mysql(con, data) ：
-由于我们的数据库有三个字段：
-* 温度
-* 标志【因为有多个测温度的地点
-* 时间
-
-都是字符串类型
-```
-def update_data_to_mysql(con, data):
-    # 建立游标
-    cur = con.cursor()
-    # 执行 SQL 语句
-    sql  = "INSERT INTO wendu VALUES(%s,%s,%s)"
-    # 执行 SQL 语句
-    cur.execute(sql, (data[0], 1, data[1]))
-    # 提交数据库更改操作
-    con.commit()
-    # 下面几行是测试查看数据库中数据是否成功添加
-    # cur.execute('SELECT *FROM wendu')
-    # inf = cur.fetchall()
-    # for i in inf:
-    #     print(i)
-```
-
-##### 最后运行一下 main() 函数即可：
-```
-main()
-```
+    都是字符串类型
+    ```py
+    def update_data_to_mysql(con, data):
+        # 建立游标
+        cur = con.cursor()
+        # 执行 SQL 语句
+        sql  = "INSERT INTO wendu VALUES(%s,%s,%s)"
+        # 执行 SQL 语句
+        cur.execute(sql, (data[0], 1, data[1]))
+        # 提交数据库更改操作
+        con.commit()
+        # 下面几行是测试查看数据库中数据是否成功添加
+        # cur.execute('SELECT *FROM wendu')
+        # inf = cur.fetchall()
+        # for i in inf:
+        #     print(i)
+    ```
+6. 最后运行一下 main() 函数即可：
+    ```py
+    main()
+    ```
 
 ### 完整代码
-```
+```py
 #-*- coding:utf-8 -*-
 
 import Adafruit_DHT
@@ -352,17 +353,17 @@ main()
 网上搜 **开机自动启动程序** 一搜一大把，我这里就是简单介绍一下我最后选择使用的自启方式
 
 修改 `根目录下的，etc 目录下的，rc.local 文件` ，在 `exit 0` 前面添加一行
-```
+```bash
 python 家目录/Temperature/get_info.py
 ```
 python3 使用：
-```
+```bash
 python3 家目录/Temperature/get_info.py
 ```
 指向的文件路径一定要是绝对路径，即从根目录开始的一个路径<br>
 比如我使用 root 用户操作的，root 用户的家目录就是 `\root` <br>
 那就写：
-```
+```bash
 python3 /root/Temperature/get_info.py
 ```
 最后大概长这样：<br>

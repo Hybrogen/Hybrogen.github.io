@@ -187,13 +187,13 @@ if __name__ == '__main__':
     try:
         while True:
             # 接通 3s 后断开 3s
-            rg.output(rep1, False)
+            rg.output(rep, False)
             time.sleep(3)
-            rg.output(rep1, True)
+            rg.output(rep, True)
             time.sleep(3)
     except:
         # 退出时关闭输出并清空接口占用
-        rg.output(rep1, True)
+        rg.output(rep, True)
         time.sleep(3)
         rg.cleanup()
 ```
