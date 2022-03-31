@@ -13,13 +13,13 @@ tag: 杂谈
 
 ### 新建一个项目
 1. 进入 [github.com](https://github.com/) 并登录【有时需要代理才能打开网页
-2. 点击页面右上角头像左边的的加号 ![Github 主页](../images/20220316/01-GithubIndex.png)
+2. 点击页面右上角头像左边的的加号 ![Github 主页](/images/20220316/01-GithubIndex.png)
 3. 选择第一条 `New repository`
-4. 输入你的项目名 -> 描述（可以不填）-> 点击 `Create repository` ![新建仓库流程](../images/20220316/02-CreateRepository.png)
+4. 输入你的项目名 -> 描述（可以不填）-> 点击 `Create repository` ![新建仓库流程](/images/20220316/02-CreateRepository.png)
 
 ### 往新项目中添加本地项目
 按照上面的步骤创建项目之后，因为是空仓库所以会显示提示
-<br>![Github 添加文件提示](../images/20220316/03-Tips.png)
+<br>![Github 添加文件提示](/images/20220316/03-Tips.png)
 
 我们使用框红部分的命令即可
 ```bash
