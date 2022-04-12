@@ -10,6 +10,7 @@ tag: 杂谈
 - [起因](#起因)
 - [安装](#安装)
 - [将视频转动 90 度](#将视频转动-90-度)
+- [参考文章](#参考文章)
 
 ### 起因
 瑾业先锋一大早的过来公司给学员答疑，他说他很难理解一个算法，但是平台的教程没有视频讲解，所以他很难理解、、、
@@ -33,3 +34,6 @@ tag: 杂谈
 ```bat
 ffmpeg -i in.mp4 -c copy -metadata:s:v:0 rotate=90 out.mp4
 ```
+
+### 参考文章
+- [这个大佬还介绍了一些其他好用的命令，但我已经懒得研究了](https://kaikai136.blog.csdn.net/article/details/80746961?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_paycolumn_v3&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_paycolumn_v3&utm_relevant_index=1)
