@@ -74,6 +74,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```sh
 apt install git curl -y
 ```
+> 2022-04-15 更新<br>
+> 这个网站 [raw.githubusercontent.com] 好像因为什么域名解析被污染的问题导致连不上<br>
+> 试了好多方法都不行，就一直用老版本得了
+> 1. 下载这个文件 [install_ohmyzsh](http://zinchon.com:333/getfile?fn=install_ohmyzsh.sh)
+> 2. 运行命令安装 `bash install_ohmyzsh.sh`
 
 #### **更换样式**
 安装完成以后，首先可以发现 Oh My Zsh 修改了你的命令终端的命令行的样式<br>
