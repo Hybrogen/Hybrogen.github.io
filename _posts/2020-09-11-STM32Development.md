@@ -55,9 +55,9 @@ tag: 单片机
    	`选中刚刚新建的main.c文件->添加->关闭`这样就成功的吧主程序加入项目了<br>![选择文件](/images/20200911/newprojectstep5.png)
 
 ### 编写一个闪烁小灯的程序
-让最小系统板上的测试灯 `PC13` 闪烁<br>
+让最小系统板上的测试灯 `PC13` 闪烁
 > 这里先说一下，由于操作io口输出需要添加`gpio库`所以我们要新添加一个库文件，选中之后ok即可<br>![gpio库](/images/20200911/add-gpio.png)
-<br>
+
 ```c
 #include "stm32f10x.h"
 #include "stdint.h"
