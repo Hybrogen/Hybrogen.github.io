@@ -4,7 +4,7 @@ title: 用STM32最小系统板进行一些开发吧
 date: 2020-09-11
 author: H_On
 description: STM32初始
-tag: 单片机
+tag: STM32
 ---
 
 ### 前言
