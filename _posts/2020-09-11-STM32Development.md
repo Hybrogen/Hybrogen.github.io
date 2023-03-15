@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 用STM32最小系统板进行一些开发吧
+title: 用 STM32 最小系统板进行一些开发吧
 date: 2020-09-11
 author: H_On
 description: STM32初始
