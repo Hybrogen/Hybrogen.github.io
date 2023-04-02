@@ -17,6 +17,11 @@ tag: Django
 **解决方法：** 可以在前端使用 nginx 反代理，将本地请求代理到后端服务器。或者在后端服务器添加跨域中间件。
 
 ### Django 跨域
+首先需要安装跨域组件 `django-cors-headers`，安装命令如下：
+```bash
+pip install django-cors-headers
+```
+
 在生成一个新的 Django 项目时，自动生成的 `setting.py` 中应该是这样的：
 ```py
 INSTALLED_APPS = [
