@@ -3,7 +3,7 @@ layout: post
 title: Django 跨域问题
 date: 2023-03-26
 description: 记录，方便自己使用
-tag: Django
+tag: Python
 ---
 
 ### 目录

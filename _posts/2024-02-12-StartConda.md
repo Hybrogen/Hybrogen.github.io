@@ -3,7 +3,7 @@ layout: post
 title: 开始使用 Conda
 date: 2024-02-12
 description: 记录，方便自己使用
-tag: 杂谈
+tag: Python
 ---
 
 ### 目录

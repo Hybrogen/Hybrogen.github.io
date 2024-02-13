@@ -3,7 +3,7 @@ layout: post
 title: 如何开始使用Django
 date: 2022-01-10
 description: 记录，方便自己使用
-tag: Django
+tag: Python
 ---
 
 # Django的使用手册
