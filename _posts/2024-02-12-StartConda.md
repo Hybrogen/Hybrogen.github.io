@@ -23,7 +23,7 @@ tag: Python
    - `conda activate test` 打开环境 
    - `conda deactivate` 关闭环境
    - `conda create --name test python=3.7.1` 创建时指定 Python 版本
-   - `` 
+   - `conda remove --name test --all`  删除刚刚创建的 test 环境
 
 ### 参考文章
 [Python 管理 —— Conda](https://zhuanlan.zhihu.com/p/638540652)
