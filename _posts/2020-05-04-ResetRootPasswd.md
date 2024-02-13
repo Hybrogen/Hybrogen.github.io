@@ -4,7 +4,7 @@ title: Debain10忘记root用户密码怎么办
 date: 2020-05-04
 author: H_On
 description: 开始为了自己研究点东西
-tag: 杂谈
+tag: Linux系统
 ---
 
 ### 目录
