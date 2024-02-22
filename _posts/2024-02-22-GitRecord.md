@@ -13,7 +13,6 @@ tag: Git
 - [本地更新上传](#本地更新上传)
 - [分支管理](#分支管理)
 - [创建分支上传远端](#创建分支上传远端)
-- [参考文章](#参考文章)
 
 ### 获取项目
 ```sh
@@ -60,6 +59,3 @@ git add .
 git commit -m "message"
 git push origin newBranchName
 ```
-
-### 参考文章
-[Python 管理 —— Conda](https://zhuanlan.zhihu.com/p/638540652)
