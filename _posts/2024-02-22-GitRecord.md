@@ -39,8 +39,10 @@ git push
 ```sh
 # 查看本地分支
 git branch
-# 查看远程分支
+# 查看本地分支最后上传记录
 git branch -v
+# 查看远程分支
+git branch -r
 # 创建分支
 git branch newBranchName
 # 创建分支同时切换
