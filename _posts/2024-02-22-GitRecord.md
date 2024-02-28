@@ -13,6 +13,7 @@ tag: Git
 - [本地更新上传](#本地更新上传)
 - [分支管理](#分支管理)
 - [创建分支上传远端](#创建分支上传远端)
+- [查看修改记录](#查看修改记录)
 
 ### 获取项目
 ```sh
@@ -76,4 +77,22 @@ git checkout -b newBranchName
 git add .
 git commit -m "message"
 git push origin newBranchName
+```
+
+### 查看修改记录
+```sh
+# 查看某个文件的提交记录
+git log filePath
+# 查看简单记录列表
+git log --pretty=oneline filePath
+# 查看所有记录信息和diff
+git log -p filePath
+# 查看所有提交记录
+git log
+# 查看某次提交中某个文件的的变化
+git show commitCode filePath
+# demo
+git show f90930137f0464b7cbe285be6a7ca768f7aa6d59 404.html
+# 从指定 commitCode 开始查看详细提交记录
+git log -p f90930137f0464b7cbe285be6a7ca768f7aa6d59
 ```
