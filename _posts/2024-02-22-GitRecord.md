@@ -14,6 +14,7 @@ tag: Git
 - [分支管理](#分支管理)
 - [创建分支上传远端](#创建分支上传远端)
 - [查看修改记录](#查看修改记录)
+- [修改提交用户配置信息](#修改提交用户配置信息)
 
 ### 获取项目
 ```sh
@@ -95,4 +96,10 @@ git show commitCode filePath
 git show f90930137f0464b7cbe285be6a7ca768f7aa6d59 404.html
 # 从指定 commitCode 开始查看详细提交记录
 git log -p f90930137f0464b7cbe285be6a7ca768f7aa6d59
+```
+
+### 修改提交用户配置信息
+```sh
+git config --global user.name "H_On"
+git config --global user.email "your@email.com"
 ```
