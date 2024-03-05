@@ -15,6 +15,7 @@ tag: Git
 - [创建分支上传远端](#创建分支上传远端)
 - [查看修改记录](#查看修改记录)
 - [修改提交用户配置信息](#修改提交用户配置信息)
+- [其他操作](#其他操作)
 
 ### 获取项目
 ```sh
@@ -102,4 +103,10 @@ git log -p f90930137f0464b7cbe285be6a7ca768f7aa6d59
 ```sh
 git config --global user.name "H_On"
 git config --global user.email "your@email.com"
+```
+
+### 其他操作
+```sh
+# push 之前执行这个命令可以进入 vim 修改上次写错的 commit 信息
+git commit --amend
 ```
