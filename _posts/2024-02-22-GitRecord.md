@@ -15,6 +15,7 @@ tag: Git
 - [创建分支上传远端](#创建分支上传远端)
 - [查看修改记录](#查看修改记录)
 - [修改提交用户配置信息](#修改提交用户配置信息)
+- [合并分支解决冲突](#合并分支解决冲突)
 - [其他操作](#其他操作)
 
 ### 获取项目
@@ -105,8 +106,22 @@ git config --global user.name "H_On"
 git config --global user.email "your@email.com"
 ```
 
+### 合并分支解决冲突
+```sh
+git checkout -b newBranch
+git checkout oldBranch
+git merge newBranch
+手动修改冲突文件
+git add .
+git commit -m "merge newBranch"
+```
+
 ### 其他操作
 ```sh
 # push 之前执行这个命令可以进入 vim 修改上次写错的 commit 信息
 git commit --amend
+# 如果 merge 之后想撤回
+git reset --merge
+# 查看分支差异
+git diff oldBranch newBranch
 ```
