@@ -111,7 +111,7 @@ git config --global user.email "your@email.com"
 git checkout -b newBranch
 git checkout oldBranch
 git merge newBranch
-手动修改冲突文件
+# 手动修改冲突文件
 git add .
 git commit -m "merge newBranch"
 ```
