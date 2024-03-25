@@ -16,6 +16,7 @@ tag: Git
 - [查看修改记录](#查看修改记录)
 - [修改提交用户配置信息](#修改提交用户配置信息)
 - [合并分支解决冲突](#合并分支解决冲突)
+- [差异查看](#差异查看)
 - [其他操作](#其他操作)
 
 ### 获取项目
@@ -114,6 +115,29 @@ git merge newBranch
 # 手动修改冲突文件
 git add .
 git commit -m "merge newBranch"
+# 取消 merge 操作
+git merge --abort:
+```
+
+### 差异查看
+```sh
+# 查看分支差异
+git diff oldBranch newBranch --stat
+# 查看分支详细差别
+git diff oldBranch newBranch
+# 查看指定文件分支详细差别
+git diff oldBranch newBranch filePath
+# 查看不同版本的差异
+git diff oldCode newCode [--stat]
+# 例
+git diff 20f4366 66f68c8 --stat
+# 用回溯的标记查看版本的差异
+git diff Branch~2 Branch [--stat]
+
+# 查看 newBranch 中有，而 oldBranch 中没有的 log
+git log newBranch ^oldBranch
+# 查看 newBranch 中多提交了哪些内容
+git log oldBranch..newBranch
 ```
 
 ### 其他操作
@@ -122,6 +146,6 @@ git commit -m "merge newBranch"
 git commit --amend
 # 如果 merge 之后想撤回
 git reset --merge
-# 查看分支差异
-git diff oldBranch newBranch
+# 查询当前分支状态
+git status
 ```
