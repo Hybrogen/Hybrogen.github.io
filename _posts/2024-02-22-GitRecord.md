@@ -12,6 +12,7 @@ tag: Git
 - [拉取项目更新本地](#拉取项目更新本地)
 - [本地更新上传](#本地更新上传)
 - [分支管理](#分支管理)
+- [文件提交缓存查看](#文件提交缓存查看)
 - [创建分支上传远端](#创建分支上传远端)
 - [查看修改记录](#查看修改记录)
 - [修改提交用户配置信息](#修改提交用户配置信息)
@@ -59,10 +60,7 @@ git checkout -b newBranchName
 git checkout master
 # 删除分支
 git branch -d branchName
-```
 
-其他的
-```sh
 # 查看所有分支（远程和本地）
 git branch -a
 # 查看哪些分支合并到当前分支
@@ -73,6 +71,31 @@ git branch --no-merged
 git branch -D branchName
 # 删除远程分支
 git push origin :remoteBranchName
+```
+
+### 文件提交缓存查看
+```sh
+# 添加文件
+git add .
+git add path/file_name
+
+# 查看缓存区文件
+git ls-files
+# 显示文件状态信息
+git ls-files -s
+# 查看修改但未缓存的文件
+git ls-files -m
+# 查看未跟踪的文件 .gitignore
+git ls-files -o
+# 查看所有暂存和未暂存的文件
+git ls-files --stage
+
+# 回退缓存区文件
+git reset
+# 回退到头版本
+git reset HEAD <file>
+# 丢弃缓存区文件 (谨慎使用)
+git reset --hard
 ```
 
 ### 创建分支上传远端
