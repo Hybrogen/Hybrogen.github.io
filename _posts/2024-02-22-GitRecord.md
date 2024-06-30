@@ -96,6 +96,11 @@ git reset
 git reset HEAD <file>
 # 丢弃缓存区文件 (谨慎使用)
 git reset --hard
+
+# 查看工作区与缓存区的差异
+git diff <file>
+# 查看暂存区与最后一次提交的差异
+git diff --cached
 ```
 
 ### 创建分支上传远端
